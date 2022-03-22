@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <h2 style="position:relative; left: 100px;">Posts</h2>
+    <style>
+        div.posts{
+            position: relative;
+            left: 200px;
+            margin: 50px;
+        }
+        p.content{
+            font-size: 18px;
+        }
+        p.title{
+            font-size: 25px;
+        }
+        p.username{
+            font-size: 15px;
+            position:relative;
+            left 600px;
+        }
+
+    </style>
+    {% for post in posts %}
+        <div class = "posts">
+
+            <p class = "title">{{ post.title }}</p>
+            <p class = "image"><img src="{{ post.image }}" alt="Here must be image"></p>
+            <p class = "content">{{ post.content }}</p>
+            <p class = "username">by {{ post.user }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
